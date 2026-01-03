@@ -2,143 +2,48 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
+  <title>ভাই ভাই স্টোর</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bhai Bhai Cloth</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-    }
-
-    header {
-      background: #ffffff;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    header img {
-      width: 150px;
-    }
-
-    header h2 {
-      margin: 8px 0 0;
-      color: #222;
-    }
-
-    .section {
-      padding: 20px;
-    }
-
-    .section h3 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    /* Product Section */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-    }
-
-    .product {
-      background: #fff;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .product p {
-      margin: 8px 0 0;
-      font-weight: bold;
-    }
-
-    /* WhatsApp Button */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    /* Map */
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #222;
-      color: #fff;
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER / LOGO -->
-  <header>
-    <img src="images/logo.png" alt="Bhai Bhai Cloth Logo">
-    <h2>Bhai Bhai Cloth</h2>
+  <!-- Header -->
+  <header class="header">
+    <img src="images/logo.png" alt="ভাই ভাই স্টোর লোগো" class="logo">
+    <h1>ভাই ভাই স্টোর</h1>
+    <p>বিশ্বাসের সাথে কেনাকাটা</p>
   </header>
 
-  <!-- PRODUCT SECTION -->
-  <div class="section">
-    <h3>আমাদের পণ্য</h3>
-    <div class="products">
-      <div class="product">
-        <img src="images/product1.jpg" alt="Product 1">
-        <p>কাপড় – ১</p>
-      </div>
-      <div class="product">
-        <img src="images/product2.jpg" alt="Product 2">
-        <p>কাপড় – ২</p>
-      </div>
-      <div class="product">
-        <img src="images/product3.jpg" alt="Product 3">
-        <p>কাপড় – ৩</p>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>স্বাগতম ভাই ভাই স্টোরে</h2>
+    <p>
+      আমরা খুব শীঘ্রই নিয়ে আসছি  
+      সেরা মানের পোশাক ও পণ্য  
+    </p>
+  </section>
+
+  <!-- Info Cards -->
+  <section class="info">
+    <div class="card">
+      <h3>✔ বিশ্বস্ততা</h3>
+      <p>গ্রাহকের বিশ্বাসই আমাদের শক্তি</p>
     </div>
-  </div>
+    <div class="card">
+      <h3>✔ সেরা মান</h3>
+      <p>গুণগত মানে কোন আপস নয়</p>
+    </div>
+    <div class="card">
+      <h3>✔ সহজ যোগাযোগ</h3>
+      <p>হোয়াটসঅ্যাপ ও কল সাপোর্ট</p>
+    </div>
+  </section>
 
-  <!-- MAP SECTION -->
-  <div class="section">
-    <h3>আমাদের দোকানের লোকেশন</h3>
-    <iframe 
-      src="https://www.google.com/maps?q=23.8103,90.4125&output=embed">
-    </iframe>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Bhai Bhai Cloth | All Rights Reserved
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© ২০২৬ ভাই ভাই স্টোর | সর্বস্বত্ব সংরক্ষিত</p>
   </footer>
-
-  <!-- WHATSAPP CHAT BUTTON -->
-  <a class="whatsapp" 
-     href="https://wa.me/8801XXXXXXXXX" 
-     target="_blank">
-     💬 WhatsApp
-  </a>
 
 </body>
 </html>
