@@ -1,197 +1,144 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ভাই ভাই ক্লথ স্টোর</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhai Bhai Cloth</title>
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:linear-gradient(135deg,#fdfbfb,#ebedee);
-  color:#333;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
 
-/* HEADER */
-header{
-  background:linear-gradient(90deg,#0f9b0f,#1f4037);
-  color:#fff;
-  padding:25px 15px;
-  text-align:center;
-}
-header img{
-  height:80px;
-  background:#fff;
-  padding:8px;
-  border-radius:18px;
-  box-shadow:0 6px 15px rgba(0,0,0,.35);
-}
-header h1{margin:15px 0 5px;font-size:30px}
-header p{margin:0;opacity:.9}
+    header {
+      background: #ffffff;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
 
-/* NAV */
-nav{margin-top:12px}
-nav a{
-  color:#fff;
-  margin:0 12px;
-  text-decoration:none;
-  font-weight:600;
-}
-nav a:hover{text-decoration:underline}
+    header img {
+      width: 150px;
+    }
 
-/* CONTAINER */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:25px 15px;
-}
+    header h2 {
+      margin: 8px 0 0;
+      color: #222;
+    }
 
-/* PRODUCTS */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
-}
-.card{
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 8px 22px rgba(0,0,0,.12);
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 14px 28px rgba(0,0,0,.18);
-}
-.card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-.card h3{
-  margin:15px 0;
-  color:#0f9b0f;
-  text-align:center;
-}
+    .section {
+      padding: 20px;
+    }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 22px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-}
-.map-btn{background:#4285F4;color:#fff}
-.call-btn{background:#25D366;color:#fff}
+    .section h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
 
-/* MAP */
-iframe{
-  width:100%;
-  height:320px;
-  border:0;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,.15);
-}
+    /* Product Section */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:#fff;
-  padding:14px 18px;
-  border-radius:50px;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,.3);
-  z-index:999;
-}
-.whatsapp:hover{background:#1ebe5d}
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-/* FOOTER */
-footer{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:18px;
-  margin-top:40px;
-  font-size:14px;
-}
-</style>
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product p {
+      margin: 8px 0 0;
+      font-weight: bold;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Map */
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-  <img src="logo.png" alt="ভাই ভাই লোগো">
-  <h1>ভাই ভাই ক্লথ স্টোর</h1>
-  <p>বিশ্বাস ও মানের ঠিকানা</p>
+  <!-- HEADER / LOGO -->
+  <header>
+    <img src="images/logo.png" alt="Bhai Bhai Cloth Logo">
+    <h2>Bhai Bhai Cloth</h2>
+  </header>
 
-  <nav>
-    <a href="#products">পণ্য</a>
-    <a href="#map">লোকেশন</a>
-    <a href="#contact">যোগাযোগ</a>
-  </nav>
-</header>
-
-<div class="container">
-
-<h2 id="products">🧵 আমাদের পণ্য</h2>
-<div class="products">
-  <div class="card">
-    <img src="https://source.unsplash.com/400x300/?saree">
-    <h3>বিয়ানী সাড়ি</h3>
+  <!-- PRODUCT SECTION -->
+  <div class="section">
+    <h3>আমাদের পণ্য</h3>
+    <div class="products">
+      <div class="product">
+        <img src="images/product1.jpg" alt="Product 1">
+        <p>কাপড় – ১</p>
+      </div>
+      <div class="product">
+        <img src="images/product2.jpg" alt="Product 2">
+        <p>কাপড় – ২</p>
+      </div>
+      <div class="product">
+        <img src="images/product3.jpg" alt="Product 3">
+        <p>কাপড় – ৩</p>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <img src="https://source.unsplash.com/400x300/?party-dress">
-    <h3>পার্টি সাড়ি</h3>
+  <!-- MAP SECTION -->
+  <div class="section">
+    <h3>আমাদের দোকানের লোকেশন</h3>
+    <iframe 
+      src="https://www.google.com/maps?q=23.8103,90.4125&output=embed">
+    </iframe>
   </div>
 
-  <div class="card">
-    <img src="https://source.unsplash.com/400x300/?salwar-kameez">
-    <h3>থ্রি পিস</h3>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Bhai Bhai Cloth | All Rights Reserved
+  </footer>
 
-  <div class="card">
-    <img src="https://source.unsplash.com/400x300/?mens-clothing">
-    <h3>জেন্টস আইটেম</h3>
-  </div>
-
-  <div class="card">
-    <img src="https://source.unsplash.com/400x300/?kids-clothing">
-    <h3>শিশুদের কাপড়</h3>
-  </div>
-</div>
-
-<h2 id="map">📍 আমাদের লোকেশন</h2>
-<iframe src="https://www.google.com/maps?q=22.3559,91.8340&output=embed"></iframe>
-
-<a class="btn map-btn" target="_blank"
-href="https://maps.app.goo.gl/F6bC8ES3JfP6pvcC9">
-📍 Google Map এ দেখুন
-</a>
-
-<h2 id="contact">📞 যোগাযোগ</h2>
-<p>📱 01844-258379 | 01815-535783</p>
-<a class="btn call-btn" href="tel:01844258379">📞 এখনই কল করুন</a>
-
-</div>
-
-<!-- WhatsApp Floating Button -->
-<a class="whatsapp" target="_blank"
-href="https://wa.me/8801844258379">
-💬 WhatsApp
-</a>
-
-<footer>
-© 2026 ভাই ভাই ক্লথ স্টোর | সকল অধিকার সংরক্ষিত
-</footer>
+  <!-- WHATSAPP CHAT BUTTON -->
+  <a class="whatsapp" 
+     href="https://wa.me/8801XXXXXXXXX" 
+     target="_blank">
+     💬 WhatsApp
+  </a>
 
 </body>
 </html>
