@@ -1,183 +1,197 @@
-<!DOCTYPE html><html lang="bn">
+<!DOCTYPE html>
+<html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ভাই ভাই ক্লথ স্টোর</title>  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f6f8;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ভাই ভাই ক্লথ স্টোর</title>
 
-    header {
-      background: linear-gradient(90deg, #b31217, #1f4037);
-      color: #fff;
-      padding: 25px 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:linear-gradient(135deg,#fdfbfb,#ebedee);
+  color:#333;
+}
 
-    header img {
-      height: 70px;
-      background: #fff;
-      padding: 6px;
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-    }
+/* HEADER */
+header{
+  background:linear-gradient(90deg,#0f9b0f,#1f4037);
+  color:#fff;
+  padding:25px 15px;
+  text-align:center;
+}
+header img{
+  height:80px;
+  background:#fff;
+  padding:8px;
+  border-radius:18px;
+  box-shadow:0 6px 15px rgba(0,0,0,.35);
+}
+header h1{margin:15px 0 5px;font-size:30px}
+header p{margin:0;opacity:.9}
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
+/* NAV */
+nav{margin-top:12px}
+nav a{
+  color:#fff;
+  margin:0 12px;
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover{text-decoration:underline}
 
-    nav {
-      margin-top: 5px;
-      text-align: center;
-    }
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:25px 15px;
+}
 
-    nav a {
-      color: #fff;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-    }
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 14px 28px rgba(0,0,0,.18);
+}
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.card h3{
+  margin:15px 0;
+  color:#0f9b0f;
+  text-align:center;
+}
 
-    nav a:hover { text-decoration: underline; }
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+.map-btn{background:#4285F4;color:#fff}
+.call-btn{background:#25D366;color:#fff}
 
-    .hero {
-      background: linear-gradient(135deg, #ffffff, #e9eef3);
-      padding: 35px 20px;
-      text-align: center;
-    }
+/* MAP */
+iframe{
+  width:100%;
+  height:320px;
+  border:0;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
 
-    .hero h2 {
-      margin-bottom: 10px;
-      font-size: 26px;
-    }
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+  z-index:999;
+}
+.whatsapp:hover{background:#1ebe5d}
 
-    .hero p {
-      font-size: 16px;
-      max-width: 700px;
-      margin: auto;
-    }
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:18px;
+  margin-top:40px;
+  font-size:14px;
+}
+</style>
+</head>
 
-    .container {
-      padding: 30px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+<body>
 
-    .section-title {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 25px;
-      color: #1f4037;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #fff;
-      padding: 25px 15px;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      text-align: center;
-      transition: all .35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.18);
-    }
-
-    .card h3 {
-      margin: 0;
-      font-size: 20px;
-    }
-
-    .contact-box {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 30px 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .contact-box p {
-      font-size: 16px;
-      margin: 10px 0;
-    }
-
-    .map-btn {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 14px 26px;
-      background: linear-gradient(90deg, #4285F4, #34A853);
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .map-btn:hover { opacity: 0.9; }
-
-    footer {
-      background: #1f1f1f;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 22px; }
-      .hero h2 { font-size: 22px; }
-    }
-  </style></head><body><header>
+<header>
   <img src="logo.png" alt="ভাই ভাই লোগো">
-  <div>
-    <h1>ভাই ভাই ক্লথ স্টোর</h1>
-    <nav>
-      <a href="#home">হোম</a>
-      <a href="#products">পণ্য</a>
-      <a href="#contact">যোগাযোগ</a>
-    </nav>
-  </div>
-</header><section class="hero" id="home">
-  <h2>আপনাকে স্বাগতম</h2>
-  <p>ভাই ভাই ক্লথ স্টোরে পাইকারি দামে উন্নত মানের সব ধরনের কাপড় পাওয়া যায়। বিশ্বস্ততা ও মান—আমাদের অঙ্গীকার।</p>
-</section><div class="container" id="products">
-  <h2 class="section-title">আমাদের পণ্যসমূহ</h2>
-  <div class="products">
-    <div class="card"><h3>বিরান মাড়ী</h3></div>
-    <div class="card"><h3>সাফি মাড়ী</h3></div>
-    <div class="card"><h3>থ্রি পিস</h3></div>
-    <div class="card"><h3>থান কাপড়</h3></div>
-  </div>
-</div><div class="container" id="contact">
-  <h2 class="section-title">যোগাযোগ করুন</h2>
-  <div class="contact-box">
-    <p><strong>প্রোপ্রাইটর:</strong> মোঃ জিয়া হোসেন (জিয়া)</p>
-    <p>📞 01844-258379 | 01815-535783</p>
-    <p>📍 সিটি সেন্টার, কাঁচা বাজারের পশ্চিম পাশে,<br>কোম্পানীঘাট, সাতকানিয়া, চট্টগ্রাম</p><a class="map-btn" target="_blank" href="https://maps.app.goo.gl/F6bC8ES3JfP6pvcC9">📍 Google Map এ দেখুন</a>
+  <h1>ভাই ভাই ক্লথ স্টোর</h1>
+  <p>বিশ্বাস ও মানের ঠিকানা</p>
 
+  <nav>
+    <a href="#products">পণ্য</a>
+    <a href="#map">লোকেশন</a>
+    <a href="#contact">যোগাযোগ</a>
+  </nav>
+</header>
+
+<div class="container">
+
+<h2 id="products">🧵 আমাদের পণ্য</h2>
+<div class="products">
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?saree">
+    <h3>বিয়ানী সাড়ি</h3>
   </div>
-</div><footer>
-  © 2026 ভাই ভাই ক্লথ স্টোর | Developed with ❤️
-</footer></body>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?party-dress">
+    <h3>পার্টি সাড়ি</h3>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?salwar-kameez">
+    <h3>থ্রি পিস</h3>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?mens-clothing">
+    <h3>জেন্টস আইটেম</h3>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/400x300/?kids-clothing">
+    <h3>শিশুদের কাপড়</h3>
+  </div>
+</div>
+
+<h2 id="map">📍 আমাদের লোকেশন</h2>
+<iframe src="https://www.google.com/maps?q=22.3559,91.8340&output=embed"></iframe>
+
+<a class="btn map-btn" target="_blank"
+href="https://maps.app.goo.gl/F6bC8ES3JfP6pvcC9">
+📍 Google Map এ দেখুন
+</a>
+
+<h2 id="contact">📞 যোগাযোগ</h2>
+<p>📱 01844-258379 | 01815-535783</p>
+<a class="btn call-btn" href="tel:01844258379">📞 এখনই কল করুন</a>
+
+</div>
+
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp" target="_blank"
+href="https://wa.me/8801844258379">
+💬 WhatsApp
+</a>
+
+<footer>
+© 2026 ভাই ভাই ক্লথ স্টোর | সকল অধিকার সংরক্ষিত
+</footer>
+
+</body>
 </html>
