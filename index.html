@@ -2,67 +2,76 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <title>ভাই ভাই স্টোর</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ভাই ভাই স্টোর</title>
 
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- HERO / LOGO -->
-<header class="hero">
-  <img src="images/logo.png" class="logo">
+<!-- HEADER -->
+<header class="header">
+  <img src="logo.png" class="logo" alt="ভাই ভাই স্টোর">
   <h1>ভাই ভাই স্টোর</h1>
   <p>বিশ্বাসের সাথে কেনাকাটা</p>
 </header>
 
 <!-- SLIDER -->
 <section class="slider">
-  <div class="slides">
-    <img src="images/banner1.jpg">
-    <img src="images/banner2.jpg">
-  </div>
+  <div class="slide active">আধুনিক ডিজাইনের কাপড়</div>
+  <div class="slide">পাইকারি ও খুচরা বিক্রয়</div>
+  <div class="slide">বিশ্বস্ত ব্যবসা</div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- PRODUCT SECTION -->
 <section class="products">
-  <h2>আমাদের পণ্য</h2>
+  <h2>আমাদের পণ্যসমূহ</h2>
 
   <div class="product-grid">
     <div class="product-card">
       <img src="images/product1.jpg">
-      <h3>কটন শার্ট</h3>
+      <h3>শাড়ি</h3>
     </div>
 
     <div class="product-card">
       <img src="images/product2.jpg">
-      <h3>পাঞ্জাবি</h3>
+      <h3>তৈয়লা</h3>
+    </div>
+
+    <div class="product-card">
+      <img src="images/product3.jpg">
+      <h3>লুঙ্গি / গামছা</h3>
     </div>
   </div>
 </section>
 
-<!-- GOOGLE MAP -->
-<section class="map-section">
-  <h2>📍 আমাদের দোকান</h2>
-
-  <div class="map-box">
-    <iframe
-      src="https://www.google.com/maps?q=23.8103,90.4125&output=embed"
-      loading="lazy">
-    </iframe>
-  </div>
+<!-- MAP -->
+<section class="map">
+  <h2>আমাদের দোকানের লোকেশন</h2>
+  <iframe
+    src="https://www.google.com/maps?q=23.8103,90.4125&z=15&output=embed"
+    loading="lazy">
+  </iframe>
 </section>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/8801XXXXXXXXX?text=ভাই ভাই স্টোর থেকে পণ্য অর্ডার করতে চাই"
-   class="whatsapp" target="_blank">
-  💬
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp"
+   href="https://wa.me/8801XXXXXXXXX?text=আমি%20ভাই%20ভাই%20স্টোর%20থেকে%20কাপড়%20নিতে%20চাই"
+   target="_blank">
+   WhatsApp
 </a>
 
-<footer>
-  © 2026 ভাই ভাই স্টোর
-</footer>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+setInterval(() => {
+  slides.forEach(s => s.classList.remove("active"));
+  slides[index].classList.add("active");
+  index = (index + 1) % slides.length;
+}, 3000);
+</script>
 
 </body>
 </html>
