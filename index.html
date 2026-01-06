@@ -6,207 +6,173 @@
 <title>ভাই ভাই স্টোর | পাইকারি কাপড়</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-html{
-  scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 body{
-  background:linear-gradient(180deg,#050505,#000);
+  background:#050505;
   color:#fff;
+  overflow-x:hidden;
 }
 
-/* ===== GLOBAL ===== */
-section{
-  padding:80px 20px;
-  max-width:1200px;
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:40px;
+  text-align:center;
+}
+
+.logo{
+  width:170px;
+  margin-bottom:10px;
+  animation:float 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 30px #00ff99);
+}
+
+.title{
+  font-size:36px;
+  color:#00ffcc;
+  margin-top:5px;
+}
+
+.tagline{
+  font-size:16px;
+  opacity:.8;
+  margin-top:6px;
+}
+
+/* ABOUT */
+.section{
+  padding:60px 20px;
+  max-width:1000px;
   margin:auto;
 }
+
+.card{
+  background:#0d0d0d;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 0 40px rgba(0,255,170,.08);
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  margin-top:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:15px;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 25px rgba(0,255,170,.4);
+}
+
+/* MAP */
+.map{
+  margin-top:30px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 20px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 25px rgba(37,211,102,.6);
+}
+
+/* ANIMATION */
 .reveal{
   opacity:0;
   transform:translateY(40px);
-  transition:1s ease;
+  transition:1s;
 }
 .reveal.active{
   opacity:1;
   transform:translateY(0);
 }
 
-/* ===== HERO ===== */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.logo{
-  width:130px;
-  margin-bottom:20px;
-  animation:float 3s ease-in-out infinite;
-  filter:drop-shadow(0 0 15px #00ff99);
-}
 @keyframes float{
-  0%{transform:translateY(0)}
+  0%,100%{transform:translateY(0)}
   50%{transform:translateY(-10px)}
-  100%{transform:translateY(0)}
-}
-.title{
-  font-size:48px;
-  font-weight:800;
-  background:linear-gradient(90deg,#00ff99,#00ccff,#00ff99);
-  background-size:200%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:shine 4s linear infinite;
-}
-@keyframes shine{
-  to{background-position:200%}
-}
-.tagline{
-  font-size:20px;
-  color:#ddd;
-  margin-top:10px;
 }
 
-/* ===== ABOUT ===== */
-.about{
-  background:rgba(255,255,255,0.04);
-  border-radius:20px;
-  padding:40px;
-  backdrop-filter:blur(10px);
-}
-.about p{
-  font-size:18px;
-  line-height:1.8;
-}
-.highlight{color:#00ff99;font-weight:600}
-
-/* ===== GALLERY ===== */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-.card{
-  background:#111;
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-  transition:.4s;
-}
-.card.allow{
-  cursor:pointer;
-}
-.card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  transition:.6s;
-}
-.card:hover img{
-  transform:scale(1.15);
-}
-.card::after{
-  content:"Premium Collection";
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:15px;
-  background:linear-gradient(transparent,rgba(0,0,0,.9));
-  text-align:center;
-  opacity:0;
-  transition:.4s;
-}
-.card:hover::after{opacity:1}
-
-/* ===== MAP ===== */
-.map-box{
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(0,0,0,.7);
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:30px;
-  color:#aaa;
-  font-size:14px;
-}
-
-/* ===== MOBILE ===== */
 @media(max-width:600px){
-  .title{font-size:34px}
-  .tagline{font-size:16px}
+  .title{font-size:28px}
+  .logo{width:140px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="reveal">
-    <img src="/bhaibhaicloth/assets/images/logo.png" class="logo" alt="Logo">
-    <h1 class="title">ভাই ভাই স্টোর</h1>
-    <p class="tagline">পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা</p>
-  </div>
+  <img src="assets/images/logo.png" class="logo" alt="ভাই ভাই স্টোর লোগো">
+  <h1 class="title">ভাই ভাই স্টোর</h1>
+  <p class="tagline">পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা</p>
 </section>
 
-<!-- ===== ABOUT ===== -->
-<section>
-  <div class="about reveal">
+<!-- ABOUT -->
+<section class="section reveal">
+  <div class="card">
+    <h2 style="color:#00ffcc;margin-bottom:10px;">আমাদের সম্পর্কে</h2>
     <p>
-      <span class="highlight">ভাই ভাই স্টোর</span> দীর্ঘদিন ধরে  
-      পাইকারি কাপড় ব্যবসায় বিশ্বস্ততার সাথে কাজ করছে।  
-      মানসম্মত কাপড়, সঠিক মূল্য এবং  
-      <span class="highlight">দীর্ঘমেয়াদী সম্পর্ক</span>  
-      — এটাই আমাদের মূল লক্ষ্য।
+      ভাই ভাই স্টোর দীর্ঘদিন ধরে পাইকারি কাপড় ব্যবসায় বিশ্বস্ততার সাথে কাজ করছে।
+      মানসম্মত কাপড়, সঠিক মূল্য এবং দীর্ঘমেয়াদি সম্পর্ক — এটাই আমাদের মূল শক্তি।
     </p>
   </div>
 </section>
 
-<!-- ===== PRODUCT GALLERY ===== -->
-<section>
-  <h2 class="reveal" style="margin-bottom:30px">Our Collection</h2>
+<!-- GALLERY -->
+<section class="section reveal">
+  <h2 style="color:#00ffcc;text-align:center;">প্রোডাক্ট গ্যালারি</h2>
   <div class="gallery">
-    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?fabric"></div>
-    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?cloth"></div>
-    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?fashion"></div>
-    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?textile"></div>
+    <img src="assets/images/p1.jpg">
+    <img src="assets/images/p2.jpg">
+    <img src="assets/images/p3.jpg">
   </div>
 </section>
 
-<!-- ===== MAP ===== -->
-<section>
-  <h2 class="reveal" style="margin-bottom:30px">Our Location</h2>
-  <div class="map-box reveal">
+<!-- MAP -->
+<section class="section reveal">
+  <h2 style="color:#00ffcc;text-align:center;">আমাদের অবস্থান</h2>
+  <div class="map">
     <iframe 
       src="https://www.google.com/maps?q=Bangladesh&output=embed"
-      width="100%" height="400" style="border:0;" loading="lazy">
+      width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
     </iframe>
   </div>
 </section>
 
-<footer>
-  © 2026 ভাই ভাই স্টোর • Premium Portfolio
-</footer>
+<a class="whatsapp" href="https://wa.me/880000000000" target="_blank">
+WhatsApp
+</a>
 
 <script>
-const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{
+const reveals=document.querySelectorAll('.reveal');
+window.addEventListener('scroll',()=>{
   reveals.forEach(r=>{
-    const top=r.getBoundingClientRect().top;
-    if(top<window.innerHeight-100){
-      r.classList.add("active");
+    if(r.getBoundingClientRect().top < window.innerHeight-80){
+      r.classList.add('active');
     }
-  });
+  })
 });
 </script>
 
