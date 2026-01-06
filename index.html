@@ -1,10 +1,132 @@
-<section class="hero">
-  <div class="logo-wrap">
-    <img src="assets/images/logo.png" class="logo" alt="Bhai Bhai Store Logo">
-  </div>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>ভাই ভাই স্টোর</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h1 class="title typing">ভাই ভাই স্টোর</h1>
-  <p class="subtitle reveal">পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা</p>
-</section>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-<script src="script.js"></script>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    /* Logo wrapper */
+    .logo-wrap{
+      background:rgba(255,255,255,0.08);
+      padding:22px;
+      border-radius:50%;
+      box-shadow:
+        0 0 40px rgba(255,255,255,0.35),
+        0 0 80px rgba(255,255,255,0.15);
+      animation:pulse 3s infinite;
+      transition:transform 0.6s ease;
+    }
+
+    .logo-wrap img{
+      width:200px;
+      height:auto;
+      animation:rotate 20s linear infinite;
+    }
+
+    /* Text */
+    h1{
+      font-size:3rem;
+      font-weight:800;
+      margin-top:10px;
+      letter-spacing:1px;
+    }
+
+    .tagline{
+      font-size:1rem;
+      opacity:0.8;
+      margin-top:4px;
+    }
+
+    /* Animations */
+    @keyframes rotate{
+      from{transform:rotate(0deg);}
+      to{transform:rotate(360deg);}
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 30px rgba(255,255,255,0.3);}
+      50%{box-shadow:0 0 70px rgba(255,255,255,0.6);}
+      100%{box-shadow:0 0 30px rgba(255,255,255,0.3);}
+    }
+
+    /* Typing animation */
+    .typing{
+      overflow:hidden;
+      white-space:nowrap;
+      border-right:2px solid #fff;
+      animation:typing 3s steps(30,end), blink 0.8s infinite;
+    }
+
+    @keyframes typing{
+      from{width:0}
+      to{width:100%}
+    }
+
+    @keyframes blink{
+      50%{border-color:transparent}
+    }
+
+    /* Scroll zoom out */
+    .shrink{
+      transform:scale(0.75);
+    }
+
+    @media(max-width:600px){
+      .logo-wrap img{width:150px;}
+      h1{font-size:2.2rem;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="logo-wrap" id="logoBox">
+      <img src="images/logo.png" alt="ভাই ভাই স্টোর লোগো">
+    </div>
+
+    <h1>ভাই ভাই স্টোর</h1>
+    <div class="tagline typing">
+      পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener("scroll",()=>{
+      const logo=document.getElementById("logoBox");
+      if(window.scrollY>80){
+        logo.classList.add("shrink");
+      }else{
+        logo.classList.remove("shrink");
+      }
+    });
+  </script>
+
+</body>
+</html>
