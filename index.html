@@ -16,7 +16,6 @@
 body{
   background:#000;
   color:#fff;
-  overflow-x:hidden;
 }
 
 /* ===== HERO ===== */
@@ -26,7 +25,7 @@ body{
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
-  padding-top:40px;
+  padding-top:25px; /* 👈 gap কম */
   text-align:center;
 }
 
@@ -38,15 +37,15 @@ body{
 .logo-wrap::before{
   content:'';
   position:absolute;
-  inset:-25px;
+  inset:-18px;
   background:radial-gradient(circle,rgba(255,255,255,0.25),transparent 70%);
-  filter:blur(25px);
+  filter:blur(18px);
   z-index:-1;
 }
 
 .logo{
-  width:190px;
-  animation:rotateSlow 20s linear infinite, glowPulse 3s ease-in-out infinite;
+  width:200px;
+  animation:rotateSlow 18s linear infinite, glowPulse 3s ease-in-out infinite;
 }
 
 @keyframes rotateSlow{
@@ -55,75 +54,81 @@ body{
 }
 
 @keyframes glowPulse{
-  0%,100%{filter:drop-shadow(0 0 10px #00ffcc);}
-  50%{filter:drop-shadow(0 0 25px #00ffcc);}
+  0%,100%{filter:drop-shadow(0 0 12px #00ffcc);}
+  50%{filter:drop-shadow(0 0 30px #00ffcc);}
 }
 
-/* TITLE */
+/* TEXT */
 .title{
-  margin-top:15px;
-  font-size:38px;
+  margin-top:8px;
+  font-size:40px;
   color:#00ffcc;
-  letter-spacing:2px;
 }
 
 .subtitle{
-  margin-top:6px;
+  margin-top:4px;
   font-size:18px;
   opacity:.85;
 }
 
 /* ===== SECTION ===== */
 .section{
-  padding:70px 20px;
-  max-width:1100px;
+  padding:45px 18px; /* 👈 compact */
+  max-width:1000px;
   margin:auto;
 }
 
 .section h2{
-  font-size:30px;
-  margin-bottom:25px;
+  font-size:28px;
+  margin-bottom:18px;
   color:#00ffcc;
 }
 
 /* ABOUT */
 .about{
-  font-size:18px;
+  font-size:17px;
   line-height:1.8;
   opacity:.9;
 }
 
 /* PRODUCTS */
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.products div{
-  padding:15px;
-  background:rgba(255,255,255,0.05);
-  border-radius:12px;
-  text-align:center;
+.product{
+  padding:14px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.06);
+  display:flex;
+  align-items:center;
+  gap:10px;
   font-size:18px;
-  transition:.4s;
+  animation:fadeUp .8s ease forwards;
 }
 
-.products div:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 20px #00ffcc;
+.product span{
+  color:#00ffcc;
+  font-weight:bold;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
 }
 
 /* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
 }
 
 .gallery div{
-  height:130px;
-  background:linear-gradient(135deg,#111,#222);
+  height:120px;
+  background:#111;
   border-radius:12px;
   display:flex;
   align-items:center;
@@ -133,27 +138,20 @@ body{
 
 /* MAP */
 .map{
-  width:100%;
-  height:300px;
-  border-radius:15px;
+  height:260px;
   background:#111;
+  border-radius:14px;
   display:flex;
   align-items:center;
   justify-content:center;
-  opacity:.8;
 }
 
 /* FOOTER */
 footer{
-  padding:20px;
+  padding:18px;
   text-align:center;
-  opacity:.6;
   font-size:14px;
-}
-
-/* SCROLL EFFECT */
-.zoom-out{
-  transition:.4s;
+  opacity:.6;
 }
 </style>
 </head>
@@ -162,8 +160,8 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <div class="logo-wrap zoom-out">
-    <img src="logo.png" class="logo" alt="ভাই ভাই স্টোর">
+  <div class="logo-wrap">
+    <img src="logo.png" class="logo">
   </div>
 
   <h1 class="title" id="typing"></h1>
@@ -174,7 +172,7 @@ footer{
 <section class="section">
   <h2>আমাদের সম্পর্কে</h2>
   <p class="about">
-    ভাই ভাই স্টোর দীর্ঘদিন ধরে পাইকারি কাপড় ব্যবসায় বিশ্বস্ততার সাথে কাজ করছে।  
+    ভাই ভাই স্টোর দীর্ঘদিন ধরে পাইকারি কাপড় ব্যবসায় বিশ্বস্ততার সাথে কাজ করছে।
     মানসম্মত কাপড়, সঠিক মূল্য এবং দীর্ঘমেয়াদি সম্পর্ক — এটাই আমাদের মূল শক্তি।
   </p>
 </section>
@@ -183,14 +181,14 @@ footer{
 <section class="section">
   <h2>আমাদের প্রোডাক্ট</h2>
   <div class="products">
-    <div>✔ বিয়ের শাড়ী</div>
-    <div>✔ পাটি শাড়ী</div>
-    <div>✔ টাঙ্গাইল শাড়ী</div>
-    <div>✔ পাবনা শাড়ী</div>
-    <div>✔ থ্রি পিস</div>
-    <div>✔ হোসিয়ারী</div>
-    <div>✔ লুঙ্গি</div>
-    <div>✔ থান কাপড়</div>
+    <div class="product"><span>✔</span> বিয়ের শাড়ী</div>
+    <div class="product"><span>✔</span> পাটি শাড়ী</div>
+    <div class="product"><span>✔</span> টাঙ্গাইল শাড়ী</div>
+    <div class="product"><span>✔</span> পাবনা শাড়ী</div>
+    <div class="product"><span>✔</span> থ্রি পিস</div>
+    <div class="product"><span>✔</span> হোসিয়ারী</div>
+    <div class="product"><span>✔</span> লুঙ্গি</div>
+    <div class="product"><span>✔</span> থান কাপড়</div>
   </div>
 </section>
 
@@ -198,47 +196,34 @@ footer{
 <section class="section">
   <h2>গ্যালারি</h2>
   <div class="gallery">
-    <div>Image 1</div>
-    <div>Image 2</div>
-    <div>Image 3</div>
-    <div>Image 4</div>
+    <div>Image</div>
+    <div>Image</div>
+    <div>Image</div>
+    <div>Image</div>
   </div>
 </section>
 
 <!-- MAP -->
 <section class="section">
   <h2>আমাদের অবস্থান</h2>
-  <div class="map">
-    Google Map এখানে বসবে
-  </div>
+  <div class="map">Google Map এখানে</div>
 </section>
 
 <footer>
-© ভাই ভাই স্টোর — পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা
+© ভাই ভাই স্টোর
 </footer>
 
 <script>
-/* TYPING EFFECT */
-const text = "ভাই ভাই স্টোর";
-let i = 0;
-const typing = document.getElementById("typing");
-
-function type(){
-  if(i < text.length){
-    typing.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type,150);
+/* Typing */
+const text="ভাই ভাই স্টোর";
+let i=0;
+const t=document.getElementById("typing");
+(function type(){
+  if(i<text.length){
+    t.innerHTML+=text[i++];
+    setTimeout(type,120);
   }
-}
-type();
-
-/* SCROLL LOGO ZOOM */
-window.addEventListener("scroll",()=>{
-  const logo = document.querySelector(".zoom-out");
-  const sc = window.scrollY;
-  const scale = Math.max(0.6,1 - sc/600);
-  logo.style.transform = `scale(${scale})`;
-});
+})();
 </script>
 
 </body>
