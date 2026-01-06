@@ -1,1 +1,1 @@
-console.log("Vai Vai Store – Premium Portfolio Loaded");
+console.log("ভাই ভাই স্টোর – Premium Animated Portfolio Loaded");
