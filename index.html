@@ -1,83 +1,90 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>ভাই ভাই স্টোর</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>ভাই ভাই স্টোর</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HERO -->
 <header class="hero">
-  <img src="logo.png" class="logo" alt="ভাই ভাই স্টোর">
+  <img src="images/logo.png" class="logo">
   <h1>ভাই ভাই স্টোর</h1>
-  <p>মান ও বিশ্বাসের প্রতীক</p>
+  <p>শুধুমাত্র পাইকারী বিক্রয়</p>
 </header>
 
-<!-- ABOUT -->
 <section class="about">
-  <h2>আমাদের সম্পর্কে</h2>
   <p>
-    <strong>ভাই ভাই স্টোর</strong> — মান ও বিশ্বাসের প্রতীক।  
-    আমাদের দোকানে বিয়ের শাড়ী, পাটি শাড়ী, টাংগাইল শাড়ী, পাবনা শাড়ী,
+    বিয়ের শাড়ী, পাটি শাড়ী, টাংগাইল শাড়ী, পাবনা শাড়ী,  
     থ্রী পিস, হোসিয়ারী, তৈয়লা, লুঙ্গী ও থান কাপড়  
-    <strong>শুধুমাত্র পাইকারী মূল্যে বিক্রয় করা হয়।</strong>
+    <b>খুচরা নয় — শুধুমাত্র পাইকারী</b>
   </p>
 </section>
 
-<!-- SLIDER -->
-<section class="slider">
-  <div class="slide active">বিশ্বস্ত পাইকারী কাপড়ের দোকান</div>
-  <div class="slide">মানসম্মত কাপড়, সাশ্রয়ী পাইকারী দাম</div>
-  <div class="slide">দীর্ঘদিনের অভিজ্ঞতা</div>
+<!-- 🔹 শাড়ী -->
+<section class="products">
+<h2>শাড়ী</h2>
+<div class="grid">
+  <img src="images/saree/s1.jpg">
+  <img src="images/saree/s2.jpg">
+  <img src="images/saree/s3.jpg">
+</div>
 </section>
 
-<!-- PRODUCTS -->
+<!-- 🔹 থ্রী পিস -->
 <section class="products">
-  <h2>আমাদের পণ্য</h2>
+<h2>থ্রী পিস</h2>
+<div class="grid">
+  <img src="images/three-piece/t1.jpg">
+  <img src="images/three-piece/t2.jpg">
+</div>
+</section>
 
-  <div class="product-grid">
-    <div class="product"><img src="images/RM_006.jpg"><span>শাড়ী</span></div>
-    <div class="product"><img src="images/RM_007.jpg"><span>শাড়ী</span></div>
-    <div class="product"><img src="images/RM_008.jpg"><span>তৈয়লা</span></div>
-    <div class="product"><img src="images/RM_009.jpg"><span>লুঙ্গী</span></div>
-    <div class="product"><img src="images/RM_016.jpg"><span>থ্রী পিস</span></div>
-    <div class="product"><img src="images/RM_017.jpg"><span>হোসিয়ারী</span></div>
-    <div class="product"><img src="images/RM_021.jpg"><span>থান কাপড়</span></div>
-    <div class="product"><img src="images/RM_022.jpg"><span>শাড়ী</span></div>
-    <div class="product"><img src="images/RM_024.jpg"><span>শাড়ী</span></div>
-    <div class="product"><img src="images/RM_028.jpg"><span>থান কাপড়</span></div>
-    <div class="product"><img src="images/RM_030.jpg"><span>লুঙ্গী</span></div>
-  </div>
+<!-- 🔹 হোসিয়ারী -->
+<section class="products">
+<h2>হোসিয়ারী</h2>
+<div class="grid">
+  <img src="images/hosiery/h1.jpg">
+</div>
+</section>
+
+<!-- 🔹 লুঙ্গী -->
+<section class="products">
+<h2>লুঙ্গী</h2>
+<div class="grid">
+  <img src="images/lungi/l1.jpg">
+</div>
+</section>
+
+<!-- 🔹 তৈয়লা -->
+<section class="products">
+<h2>তৈয়লা</h2>
+<div class="grid">
+  <img src="images/tayela/ty1.jpg">
+</div>
+</section>
+
+<!-- 🔹 থান কাপড় -->
+<section class="products">
+<h2>থান কাপড়</h2>
+<div class="grid">
+  <img src="images/than/th1.jpg">
+</div>
 </section>
 
 <!-- MAP -->
 <section class="map">
-  <h2>আমাদের দোকানের লোকেশন</h2>
-  <iframe
-    src="https://www.google.com/maps?q=23.8103,90.4125&z=15&output=embed"
-    loading="lazy">
-  </iframe>
+<h2>আমাদের লোকেশন</h2>
+<iframe src="https://www.google.com/maps?q=23.8103,90.4125&z=15&output=embed"></iframe>
 </section>
 
-<!-- WHATSAPP -->
+<!-- WhatsApp -->
 <a class="whatsapp"
-   href="https://wa.me/8801814972483?text=আসসালামু%20আলাইকুম,%20ভাই%20ভাই%20স্টোর%20থেকে%20পাইকারী%20কাপড়%20নিতে%20চাই"
-   target="_blank">💬</a>
-
-<script>
-let slides = document.querySelectorAll(".slide");
-let i = 0;
-setInterval(()=>{
-  slides.forEach(s=>s.classList.remove("active"));
-  slides[i].classList.add("active");
-  i = (i+1)%slides.length;
-},3000);
-</script>
+href="https://wa.me/8801814972483?text=ভাই%20ভাই%20স্টোর%20থেকে%20পাইকারী%20কাপড়%20নিতে%20চাই"
+target="_blank">💬</a>
 
 </body>
 </html>
