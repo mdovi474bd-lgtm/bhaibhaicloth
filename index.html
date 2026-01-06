@@ -16,75 +16,38 @@
   <p>শুধুমাত্র পাইকারী বিক্রয়</p>
 </header>
 
-<section class="about">
-  <p>
-    বিয়ের শাড়ী, পাটি শাড়ী, টাংগাইল শাড়ী, পাবনা শাড়ী,  
-    থ্রী পিস, হোসিয়ারী, তৈয়লা, লুঙ্গী ও থান কাপড়  
-    <b>খুচরা নয় — শুধুমাত্র পাইকারী</b>
-  </p>
-</section>
+<section id="productArea"></section>
 
-<!-- 🔹 শাড়ী -->
-<section class="products">
-<h2>শাড়ী</h2>
-<div class="grid">
-  <img src="images/saree/s1.jpg">
-  <img src="images/saree/s2.jpg">
-  <img src="images/saree/s3.jpg">
-</div>
-</section>
-
-<!-- 🔹 থ্রী পিস -->
-<section class="products">
-<h2>থ্রী পিস</h2>
-<div class="grid">
-  <img src="images/three-piece/t1.jpg">
-  <img src="images/three-piece/t2.jpg">
-</div>
-</section>
-
-<!-- 🔹 হোসিয়ারী -->
-<section class="products">
-<h2>হোসিয়ারী</h2>
-<div class="grid">
-  <img src="images/hosiery/h1.jpg">
-</div>
-</section>
-
-<!-- 🔹 লুঙ্গী -->
-<section class="products">
-<h2>লুঙ্গী</h2>
-<div class="grid">
-  <img src="images/lungi/l1.jpg">
-</div>
-</section>
-
-<!-- 🔹 তৈয়লা -->
-<section class="products">
-<h2>তৈয়লা</h2>
-<div class="grid">
-  <img src="images/tayela/ty1.jpg">
-</div>
-</section>
-
-<!-- 🔹 থান কাপড় -->
-<section class="products">
-<h2>থান কাপড়</h2>
-<div class="grid">
-  <img src="images/than/th1.jpg">
-</div>
-</section>
-
-<!-- MAP -->
 <section class="map">
 <h2>আমাদের লোকেশন</h2>
 <iframe src="https://www.google.com/maps?q=23.8103,90.4125&z=15&output=embed"></iframe>
 </section>
 
-<!-- WhatsApp -->
 <a class="whatsapp"
 href="https://wa.me/8801814972483?text=ভাই%20ভাই%20স্টোর%20থেকে%20পাইকারী%20কাপড়%20নিতে%20চাই"
 target="_blank">💬</a>
+
+<script src="products.js"></script>
+
+<script>
+const area = document.getElementById("productArea");
+
+for (const category in products) {
+  const section = document.createElement("section");
+  section.className = "products";
+
+  section.innerHTML = `<h2>${category}</h2><div class="grid"></div>`;
+  const grid = section.querySelector(".grid");
+
+  products[category].images.forEach(img => {
+    const image = document.createElement("img");
+    image.src = products[category].folder + img;
+    grid.appendChild(image);
+  });
+
+  area.appendChild(section);
+}
+</script>
 
 </body>
 </html>
