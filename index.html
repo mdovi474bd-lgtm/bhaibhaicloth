@@ -1,93 +1,214 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ভাই ভাই স্টোর | পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ভাই ভাই স্টোর | পাইকারি কাপড়</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+html{
+  scroll-behavior:smooth;
+}
+body{
+  background:linear-gradient(180deg,#050505,#000);
+  color:#fff;
+}
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+/* ===== GLOBAL ===== */
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.logo{
+  width:130px;
+  margin-bottom:20px;
+  animation:float 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 15px #00ff99);
+}
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+.title{
+  font-size:48px;
+  font-weight:800;
+  background:linear-gradient(90deg,#00ff99,#00ccff,#00ff99);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shine 4s linear infinite;
+}
+@keyframes shine{
+  to{background-position:200%}
+}
+.tagline{
+  font-size:20px;
+  color:#ddd;
+  margin-top:10px;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  background:rgba(255,255,255,0.04);
+  border-radius:20px;
+  padding:40px;
+  backdrop-filter:blur(10px);
+}
+.about p{
+  font-size:18px;
+  line-height:1.8;
+}
+.highlight{color:#00ff99;font-weight:600}
+
+/* ===== GALLERY ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:#111;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  transition:.4s;
+}
+.card.allow{
+  cursor:pointer;
+}
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:.6s;
+}
+.card:hover img{
+  transform:scale(1.15);
+}
+.card::after{
+  content:"Premium Collection";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:15px;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+  text-align:center;
+  opacity:0;
+  transition:.4s;
+}
+.card:hover::after{opacity:1}
+
+/* ===== MAP ===== */
+.map-box{
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(0,0,0,.7);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#aaa;
+  font-size:14px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .title{font-size:34px}
+  .tagline{font-size:16px}
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HERO SECTION -->
-  <header class="hero reveal">
-    <!-- LOGO -->
-    <img src="./logo.png" alt="ভাই ভাই স্টোর লোগো" class="logo">
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="reveal">
+    <img src="/bhaibhaicloth/assets/images/logo.png" class="logo" alt="Logo">
+    <h1 class="title">ভাই ভাই স্টোর</h1>
+    <p class="tagline">পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা</p>
+  </div>
+</section>
 
-    <!-- TITLE -->
-    <h1 class="title">
-      <span>ভাই ভাই স্টোর</span>
-    </h1>
-
-    <!-- TAGLINE -->
-    <p class="tagline animate-text">
-      পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা
-    </p>
-  </header>
-
-  <!-- ABOUT -->
-  <section class="about reveal">
-    <h2>আমাদের সম্পর্কে</h2>
+<!-- ===== ABOUT ===== -->
+<section>
+  <div class="about reveal">
     <p>
-      ভাই ভাই স্টোর একটি বিশ্বস্ত পাইকারি কাপড়ের ব্যবসা প্রতিষ্ঠান।
-      এখানে বিয়ের শাড়ী, পাটি শাড়ী, টাঙ্গাইল শাড়ী, পাবনা শাড়ী,
-      থ্রি পিস, হোসিয়ারী, লুঙ্গী ও থান কাপড়
-      <strong>শুধুমাত্র পাইকারি মূল্যে</strong> বিক্রয় করা হয়।
+      <span class="highlight">ভাই ভাই স্টোর</span> দীর্ঘদিন ধরে  
+      পাইকারি কাপড় ব্যবসায় বিশ্বস্ততার সাথে কাজ করছে।  
+      মানসম্মত কাপড়, সঠিক মূল্য এবং  
+      <span class="highlight">দীর্ঘমেয়াদী সম্পর্ক</span>  
+      — এটাই আমাদের মূল লক্ষ্য।
     </p>
-  </section>
+  </div>
+</section>
 
-  <!-- PRODUCTS (PORTFOLIO STYLE) -->
-  <section class="portfolio reveal">
-    <h2>আমাদের পণ্যসমূহ</h2>
-    <div class="grid">
-      <div class="card">বিয়ের শাড়ী</div>
-      <div class="card">পাটি শাড়ী</div>
-      <div class="card">টাঙ্গাইল শাড়ী</div>
-      <div class="card">পাবনা শাড়ী</div>
-      <div class="card">থ্রি পিস</div>
-      <div class="card">হোসিয়ারী</div>
-      <div class="card">লুঙ্গী</div>
-      <div class="card">থান কাপড়</div>
-    </div>
-  </section>
+<!-- ===== PRODUCT GALLERY ===== -->
+<section>
+  <h2 class="reveal" style="margin-bottom:30px">Our Collection</h2>
+  <div class="gallery">
+    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?fabric"></div>
+    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?cloth"></div>
+    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?fashion"></div>
+    <div class="card reveal"><img src="https://source.unsplash.com/600x600/?textile"></div>
+  </div>
+</section>
 
-  <!-- GALLERY -->
-  <section class="gallery reveal">
-    <h2>Showroom Gallery</h2>
-    <div class="gallery-grid" id="gallery">
-      <!-- JS auto load images -->
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <section class="map reveal">
-    <h2>আমাদের অবস্থান</h2>
-    <iframe
+<!-- ===== MAP ===== -->
+<section>
+  <h2 class="reveal" style="margin-bottom:30px">Our Location</h2>
+  <div class="map-box reveal">
+    <iframe 
       src="https://www.google.com/maps?q=Bangladesh&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      width="100%" height="400" style="border:0;" loading="lazy">
     </iframe>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 ভাই ভাই স্টোর | পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা
-  </footer>
+<footer>
+  © 2026 ভাই ভাই স্টোর • Premium Portfolio
+</footer>
 
-  <!-- WHATSAPP FLOATING BUTTON -->
-  <a
-    href="https://wa.me/8801814972483"
-    target="_blank"
-    class="whatsapp">
-    WhatsApp
-  </a>
-
-  <!-- JS -->
-  <script src="script.js"></script>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(r=>{
+    const top=r.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){
+      r.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
