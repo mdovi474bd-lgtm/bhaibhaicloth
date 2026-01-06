@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>ভাই ভাই স্টোর</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ভাই ভাই স্টোর | Premium Fabric Portfolio</title>
 
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="logo-box">
-    <img src="logo.png" alt="ভাই ভাই স্টোর">
-    <h1>ভাই ভাই স্টোর</h1>
-    <p>পাইকারি কাপড় বিক্রয় কেন্দ্র</p>
-  </div>
+<!-- HERO -->
+<header class="hero">
+  <img src="logo.png" class="logo" alt="Vai Vai Store">
+  <h1>ভাই ভাই স্টোর</h1>
+  <p class="tagline">পাইকারি কাপড় বিক্রয় কেন্দ্র</p>
+  <span class="premium">Premium Quality Fabrics</span>
 </header>
 
-<section class="hero">
-  <h2>Premium Quality Fabrics</h2>
+<!-- ABOUT -->
+<section class="about">
+  <h2>আমাদের সম্পর্কে</h2>
+  <p>
+    ভাই ভাই স্টোর একটি বিশ্বস্ত পাইকারি কাপড় বিক্রয় কেন্দ্র।  
+    আমরা সারা বাংলাদেশে উন্নতমানের কাপড় সরবরাহ করে থাকি।
+  </p>
 </section>
 
-<section class="products">
-  <h3>Three Piece Collection</h3>
-  <div class="product-grid" id="threePiece"></div>
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <h2>আমাদের কালেকশন</h2>
 
-  <h3>Saree Collection</h3>
-  <div class="product-grid" id="saree"></div>
+  <div class="grid">
+    <div class="card">বিয়ের শাড়ী</div>
+    <div class="card">পাটি শাড়ী</div>
+    <div class="card">টাঙ্গাইল শাড়ী</div>
+    <div class="card">পাবনা শাড়ী</div>
+    <div class="card">থ্রি পিস</div>
+    <div class="card">হোসিয়ারী</div>
+    <div class="card">লুঙ্গি</div>
+    <div class="card">থান কাপড়</div>
+  </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery">
+  <h2>Showroom Gallery</h2>
+  <div class="gallery-grid">
+    <img src="products/1.jpg">
+    <img src="products/2.jpg">
+    <img src="products/3.jpg">
+    <img src="products/4.jpg">
+  </div>
+</section>
+
+<!-- MAP -->
 <section class="map">
-  <iframe src="https://www.google.com/maps?q=Bangladesh&output=embed"></iframe>
+  <h2>আমাদের অবস্থান</h2>
+  <iframe 
+    src="https://www.google.com/maps?q=Bangladesh&output=embed"
+    loading="lazy">
+  </iframe>
 </section>
 
-<a class="whatsapp-btn"
- href="https://wa.me/8801814972483?text=আমি পাইকারি কাপড় কিনতে চাই"
- target="_blank">WhatsApp</a>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 ভাই ভাই স্টোর | All Rights Reserved</p>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/8801XXXXXXXXX" class="whatsapp" target="_blank">WhatsApp</a>
 
 <script src="script.js"></script>
 </body>
