@@ -7,7 +7,7 @@
 
 body {
   background: #0b0b0b;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* HERO */
@@ -23,24 +23,47 @@ body {
   margin-bottom: 20px;
 }
 
-.hero h1 {
-  font-size: 42px;
-  letter-spacing: 2px;
-}
-
-.tagline {
-  opacity: 0.8;
-  margin: 10px 0;
-}
-
-.premium {
+/* TITLE GLOW ANIMATION */
+.title span {
   display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: linear-gradient(90deg, gold, #b8860b);
-  color: #000;
-  font-weight: 600;
-  border-radius: 30px;
+  font-size: 42px;
+  letter-spacing: 3px;
+  animation: titleGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 6px gold;
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 0 0 22px gold;
+    transform: scale(1.04);
+  }
+}
+
+/* TAGLINE SLIDE + FADE */
+.tagline {
+  margin-top: 12px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.animate-text {
+  opacity: 0;
+  animation: slideFade 1.6s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes slideFade {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
 }
 
 /* SECTIONS */
@@ -119,7 +142,7 @@ footer {
   opacity: 0.6;
 }
 
-/* WhatsApp */
+/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -130,4 +153,5 @@ footer {
   border-radius: 40px;
   text-decoration: none;
   font-weight: 600;
+  box-shadow: 0 0 15px #25D366;
 }
