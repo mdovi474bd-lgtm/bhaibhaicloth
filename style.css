@@ -34,6 +34,9 @@ body{
   text-align:center;
   animation:fadeUp 1.5s;
 }
+.about h2{
+  margin-bottom:15px;
+}
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(40px);}
   to{opacity:1;transform:translateY(0);}
