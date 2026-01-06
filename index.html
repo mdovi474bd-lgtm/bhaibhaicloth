@@ -1,132 +1,245 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>ভাই ভাই স্টোর</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ভাই ভাই স্টোর</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    body{
-      background:#000;
-      color:#fff;
-      overflow-x:hidden;
-    }
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:40px;
+  text-align:center;
+}
 
-    .hero{
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
+/* LOGO */
+.logo-wrap{
+  position:relative;
+}
 
-    /* Logo wrapper */
-    .logo-wrap{
-      background:rgba(255,255,255,0.08);
-      padding:22px;
-      border-radius:50%;
-      box-shadow:
-        0 0 40px rgba(255,255,255,0.35),
-        0 0 80px rgba(255,255,255,0.15);
-      animation:pulse 3s infinite;
-      transition:transform 0.6s ease;
-    }
+.logo-wrap::before{
+  content:'';
+  position:absolute;
+  inset:-25px;
+  background:radial-gradient(circle,rgba(255,255,255,0.25),transparent 70%);
+  filter:blur(25px);
+  z-index:-1;
+}
 
-    .logo-wrap img{
-      width:200px;
-      height:auto;
-      animation:rotate 20s linear infinite;
-    }
+.logo{
+  width:190px;
+  animation:rotateSlow 20s linear infinite, glowPulse 3s ease-in-out infinite;
+}
 
-    /* Text */
-    h1{
-      font-size:3rem;
-      font-weight:800;
-      margin-top:10px;
-      letter-spacing:1px;
-    }
+@keyframes rotateSlow{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
 
-    .tagline{
-      font-size:1rem;
-      opacity:0.8;
-      margin-top:4px;
-    }
+@keyframes glowPulse{
+  0%,100%{filter:drop-shadow(0 0 10px #00ffcc);}
+  50%{filter:drop-shadow(0 0 25px #00ffcc);}
+}
 
-    /* Animations */
-    @keyframes rotate{
-      from{transform:rotate(0deg);}
-      to{transform:rotate(360deg);}
-    }
+/* TITLE */
+.title{
+  margin-top:15px;
+  font-size:38px;
+  color:#00ffcc;
+  letter-spacing:2px;
+}
 
-    @keyframes pulse{
-      0%{box-shadow:0 0 30px rgba(255,255,255,0.3);}
-      50%{box-shadow:0 0 70px rgba(255,255,255,0.6);}
-      100%{box-shadow:0 0 30px rgba(255,255,255,0.3);}
-    }
+.subtitle{
+  margin-top:6px;
+  font-size:18px;
+  opacity:.85;
+}
 
-    /* Typing animation */
-    .typing{
-      overflow:hidden;
-      white-space:nowrap;
-      border-right:2px solid #fff;
-      animation:typing 3s steps(30,end), blink 0.8s infinite;
-    }
+/* ===== SECTION ===== */
+.section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    @keyframes typing{
-      from{width:0}
-      to{width:100%}
-    }
+.section h2{
+  font-size:30px;
+  margin-bottom:25px;
+  color:#00ffcc;
+}
 
-    @keyframes blink{
-      50%{border-color:transparent}
-    }
+/* ABOUT */
+.about{
+  font-size:18px;
+  line-height:1.8;
+  opacity:.9;
+}
 
-    /* Scroll zoom out */
-    .shrink{
-      transform:scale(0.75);
-    }
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
 
-    @media(max-width:600px){
-      .logo-wrap img{width:150px;}
-      h1{font-size:2.2rem;}
-    }
-  </style>
+.products div{
+  padding:15px;
+  background:rgba(255,255,255,0.05);
+  border-radius:12px;
+  text-align:center;
+  font-size:18px;
+  transition:.4s;
+}
+
+.products div:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px #00ffcc;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
+
+.gallery div{
+  height:130px;
+  background:linear-gradient(135deg,#111,#222);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.7;
+}
+
+/* MAP */
+.map{
+  width:100%;
+  height:300px;
+  border-radius:15px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.8;
+}
+
+/* FOOTER */
+footer{
+  padding:20px;
+  text-align:center;
+  opacity:.6;
+  font-size:14px;
+}
+
+/* SCROLL EFFECT */
+.zoom-out{
+  transition:.4s;
+}
+</style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <div class="logo-wrap" id="logoBox">
-      <img src="images/logo.png" alt="ভাই ভাই স্টোর লোগো">
-    </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="logo-wrap zoom-out">
+    <img src="logo.png" class="logo" alt="ভাই ভাই স্টোর">
+  </div>
 
-    <h1>ভাই ভাই স্টোর</h1>
-    <div class="tagline typing">
-      পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা
-    </div>
-  </section>
+  <h1 class="title" id="typing"></h1>
+  <p class="subtitle">পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা</p>
+</div>
 
-  <script>
-    window.addEventListener("scroll",()=>{
-      const logo=document.getElementById("logoBox");
-      if(window.scrollY>80){
-        logo.classList.add("shrink");
-      }else{
-        logo.classList.remove("shrink");
-      }
-    });
-  </script>
+<!-- ABOUT -->
+<section class="section">
+  <h2>আমাদের সম্পর্কে</h2>
+  <p class="about">
+    ভাই ভাই স্টোর দীর্ঘদিন ধরে পাইকারি কাপড় ব্যবসায় বিশ্বস্ততার সাথে কাজ করছে।  
+    মানসম্মত কাপড়, সঠিক মূল্য এবং দীর্ঘমেয়াদি সম্পর্ক — এটাই আমাদের মূল শক্তি।
+  </p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <h2>আমাদের প্রোডাক্ট</h2>
+  <div class="products">
+    <div>✔ বিয়ের শাড়ী</div>
+    <div>✔ পাটি শাড়ী</div>
+    <div>✔ টাঙ্গাইল শাড়ী</div>
+    <div>✔ পাবনা শাড়ী</div>
+    <div>✔ থ্রি পিস</div>
+    <div>✔ হোসিয়ারী</div>
+    <div>✔ লুঙ্গি</div>
+    <div>✔ থান কাপড়</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <h2>গ্যালারি</h2>
+  <div class="gallery">
+    <div>Image 1</div>
+    <div>Image 2</div>
+    <div>Image 3</div>
+    <div>Image 4</div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="section">
+  <h2>আমাদের অবস্থান</h2>
+  <div class="map">
+    Google Map এখানে বসবে
+  </div>
+</section>
+
+<footer>
+© ভাই ভাই স্টোর — পাইকারি কাপড়ের নির্ভরযোগ্য ঠিকানা
+</footer>
+
+<script>
+/* TYPING EFFECT */
+const text = "ভাই ভাই স্টোর";
+let i = 0;
+const typing = document.getElementById("typing");
+
+function type(){
+  if(i < text.length){
+    typing.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type,150);
+  }
+}
+type();
+
+/* SCROLL LOGO ZOOM */
+window.addEventListener("scroll",()=>{
+  const logo = document.querySelector(".zoom-out");
+  const sc = window.scrollY;
+  const scale = Math.max(0.6,1 - sc/600);
+  logo.style.transform = `scale(${scale})`;
+});
+</script>
 
 </body>
 </html>
